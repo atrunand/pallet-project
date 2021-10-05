@@ -1,3 +1,6 @@
+<div class="row">
+<!-- pallet-search -->
+<div class="col-lg-3">
 <div class="container info-box1">
   <!-- row 1 -->
   <div class="row">
@@ -26,7 +29,7 @@
     <!-- column 2 -->
     <div class="col-6">
       <!-- <input type="date" id="birthday" name="birthday"> -->
-      <input type="date" class="name-text1 word-search2">
+      <input type="date" class="name-text1 word-search2" id="dateDefault1" (change)="updateFromDate($event)">
     </div>
   </div>
 
@@ -41,7 +44,7 @@
     <!-- column 2 -->
     <div class="col-6">
       <!-- <input type="date" id="birthday" name="birthday"> -->
-      <input type="date" class="name-text1 word-search2">
+      <input type="date" class="name-text1 word-search2" id="dateDefault2" (change)="updateToDate($event)">
     </div>
   </div>
 
@@ -57,7 +60,6 @@
     <div class="col-6">
       <!-- <input type="text" class="name-text1 word-search2"> -->
 
-      <!-- ยังทำ Dropdown ไม่ได้ -->
       <select class="custom-select name-text1" >
         <option value="0"></option>
         <option value="1">จ่าย</option>
@@ -75,8 +77,214 @@
     <!-- column 2 -->
     <div class="col-6">
       <br>
-      <button type="button" class="btn btn-primary mybtn word-search1">ค้นหา</button>
+      <button type="button" class="btn btn-primary mybtn1 word-search1">ค้นหา</button>
     </div>
   </div>
 
+</div>
+</div>
+
+<!-- pallet-input -->
+<div class="col-lg-3">
+  <div class="container info-box2">
+    <!-- row 1 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col-5">
+        <div class="word-search1">
+          <p>สถานะ :</p>
+        </div>
+      </div>
+      <!-- column 2 -->
+      <!-- <div class="col-auto"></div> -->
+      <!-- column 3 -->
+      <div class="col-6">
+        <select class="custom-select name-text1 bg-1" >
+          <option></option>
+          <option>จ่าย</option>
+          <option>คืน</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- row 2 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col-5">
+        <div class="word-search1">
+          <p>Date :</p>
+        </div>
+      </div>
+      <!-- column 2 -->
+      <div class="col-6">
+        <!-- <input type="date" id="birthday" name="birthday"> -->
+        <input type="date" class="name-text1 word-search2 bg-1" id="dateDefault3" (change)="updateInputDate($event)" >
+      </div>
+    </div>
+
+    <!-- row 3 -->
+    <div class="row">
+    <!-- column 1 -->
+      <div class="col-5">
+        <div class="word-search1">
+          <p>จำนวน :</p>
+        </div>
+      </div>
+      <!-- column 2 -->
+      <div class="col-6">
+        <input type="text" class="name-text1 word-search2 bg-1">
+      </div>
+    </div>
+
+    <!-- row 4 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col-5">
+        <div class="word-search1">
+          <p>Remark :</p>
+        </div>
+      </div>
+      <!-- column 2 -->
+      <div class="col-6">
+        <!-- <input type="text" class="name-text1 word-search2"> -->
+
+        <!-- ยังทำ Dropdown ไม่ได้ -->
+        <select class="custom-select name-text1 bg-1">
+          <option value="0">***</option>
+          <option value="1">พาเลทเป็นรา</option>
+          <option value="2">พาเลทชำรุดแตกเสียหาย</option>
+          <option value="3">ตะปูโผล่</option>
+          <option value="4">พาเลทสภาพเก่า</option>
+          <option value="5">พาเลทเปื้อน</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- row 5 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col-5">
+      </div>
+      <!-- column 2 -->
+      <div class="col-6">
+        <br>
+        <button type="button" class="btn btn-warning mybtn2 word-search1">+ เพิ่มรายการ</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- pallet-list -->
+<div class="col-lg-6">
+  <div class="container">
+    <p>ยอดรวมภายในทั้งหมด(In Store)ภายในปี ปัจจุบัน</p>
+    <!-- row 1 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(49, 172, 49);">
+          <p>ยอดจ่ายรวม</p>
+      </div>
+      <!-- column 2 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(253, 196, 74);">
+        <p>ยอดคืนรวม</p>
+      </div>
+      <!-- column 3 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(80, 212, 245);">
+        <p>ยอดลูกค้าค้าง</p>
+      </div>
+      <!-- column 4 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(255, 30, 30);">
+        <p>1000<br>ยอดเสีย</p>
+      </div>
+      <!-- column 5 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(117, 252, 99);">
+        <p>คงเหลือรวม</p>
+      </div>
+    </div>
+    <p>ยอดรวมเฉพาะลูกค้าที่เลือก ณ วันที่ {{datef.from}} - {{datet.to}}</p>
+    <!-- row 2 -->
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col word-search1 info-box3" style="background-color: rgb(49, 172, 49);">
+        <p>ยอดจ่ายรวม</p>
+    </div>
+    <!-- column 2 -->
+    <div class="col word-search1 info-box3" style="background-color: rgb(253, 196, 74);">
+      <p>ยอดคืนรวม</p>
+    </div>
+    <!-- column 3 -->
+    <div class="col word-search1 info-box3" style="background-color: rgb(80, 212, 245);">
+      <p>ยอดลูกค้าค้าง</p>
+    </div>
+    <!-- column 4 -->
+    <div class="col word-search1 info-box3" style="background-color: rgb(255, 30, 30);">
+      <p>1000<br>ยอดเสีย</p>
+    </div>
+      <div class="col word-search1"></div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<!-- pallet-table -->
+<hr style="margin-left: 1cm;margin-right: 1cm;margin-bottom: .1rem;">
+<div class="format-1">
+  <button type="button" class="btn btn-warning mybtn2 word-search1" style="float: right; margin-left: .5cm;">Export xls</button>
+  <button type="button" class="btn btn-warning mybtn2 word-search1" style="float: right;">Export CSV</button>
+  <br><br>
+  <table class="table table-bordered word-search1">
+    <thead style="background-color: aliceblue;">
+      <tr>
+        <!-- head 1 -->
+        <th scope="col">Date</th>
+        <!-- head 2 -->
+        <th scope="col">Time</th>
+        <!-- head 3 -->
+        <th scope="col">Pallet</th>
+        <!-- head 4 -->
+        <th scope="col">Status</th>
+        <!-- head 5 -->
+        <th scope="col">Qty</th>
+        <!-- head 6 -->
+        <th scope="col">Remark</th>
+        <!-- head 7 -->
+        <th scope="col">Log by</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- body row1 -->
+      <tr>
+        <td scope="row">01-08-2021</td>
+        <td>12:00</td>
+        <td>PalletA size xxx</td>
+        <td>จ่าย</td>
+        <td>-10</td>
+        <td></td>
+        <td>ระบบ ILO</td>
+      </tr>
+      <!-- body row2 -->
+      <tr>
+        <td scope="row">03-08-2021</td>
+        <td>13:00</td>
+        <td>PalletA size xxx</td>
+        <td>คืน</td>
+        <td>+10</td>
+        <td></td>
+        <td>ระบบ IREVO</td>
+      </tr>
+      <!-- body row3 -->
+      <tr>
+        <td scope="row">13-08-2021</td>
+        <td>15:00</td>
+        <td>PalletA size xxx</td>
+        <td>จ่าย</td>
+        <td>-1</td>
+        <td>ลูกค้าคืนไม่ครบ</td>
+        <td>User 01</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

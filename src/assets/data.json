@@ -1,0 +1,89 @@
+{"result":
+  [
+    {
+      "currentstatusid":1,
+      "code":"1",
+      "name":"Create Shipment"
+    },
+    {
+      "currentstatusid":2,
+      "code":"2",
+      "name":"Planning"
+    },
+    {
+      "currentstatusid":3,
+      "code":"3",
+      "name":"Estimate Check in"
+    },
+    {
+      "currentstatusid":4,
+      "code":"4",
+      "name":"Truck Check in"
+    },
+    {
+      "currentstatusid":5,
+      "code":"5",
+      "name":"Driver Check in"
+      },
+    {
+      "currentstatusid":6,
+      "code":"6",
+      "name":"Wait Product Preparing"
+    },
+    {
+      "currentstatusid":7,
+      "code":"7",
+      "name":"Complete Product Preparing"
+    },
+    {"currentstatusid":8,
+      "code":"8",
+      "name":"Loading Confirm"
+    },
+    {
+      "currentstatusid":9,
+      "code":"9",
+      "name":"Loading Start"
+    },
+    {
+      "currentstatusid":10,
+      "code":"10",
+      "name":"Queue Call"
+    },
+    {
+      "currentstatusid":11,
+      "code":"11",
+      "name":"Weight In"
+    },
+    {
+      "currentstatusid":12,
+      "code":"12",
+      "name":"Labor Start"
+    },
+    {
+      "currentstatusid":13,
+      "code":"13",
+      "name":"Labor Job Done"
+    },
+    {
+      "currentstatusid":14,
+      "code":"14",
+      "name":"Photo Loading"
+    },
+    {
+      "currentstatusid":15,
+      "code":"15",
+      "name":"Weight Out"
+    },
+    {
+      "currentstatusid":16,
+      "code":"16",
+      "name":"Weight Crash"
+    },
+    {
+      "currentstatusid":17,
+      "code":"17",
+      "name":"Shipment Completion"
+    }
+  ],
+  "message":"OK"
+}

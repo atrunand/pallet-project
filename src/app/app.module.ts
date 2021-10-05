@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 /////////////////////////////
 // Material Form Controls
@@ -66,6 +67,7 @@ import { PalletTableComponent } from './components/pallet-table/pallet-table.com
   ],
   imports: [
     RouterModule,
+    HttpClientModule,
     /////////////////
     MatAutocompleteModule,
     MatCheckboxModule,
